@@ -23,7 +23,7 @@ const App = () => {
   }, [todos]);
 
   const addTodo = () => {
-    setTodos([...todos, "New todo"]);
+    setTodos([...todos, "New Todo"]);
   };
 
   const incrementCounter = () => {
@@ -71,7 +71,7 @@ const App = () => {
           </li>
         ))}
       </ul>
-      <p id="calc">Counter: {counter}</p>
+      <p>Counter: {counter}</p>
     </div>
   );
 };

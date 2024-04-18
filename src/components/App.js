@@ -47,7 +47,7 @@ const App = () => {
     <div id="main">
       <h1>Task Manager</h1>
       <button id="add-todo-btn" onClick={addTodo}>
-        Add todo
+        Add Todo
       </button>
       <button id="incr-cnt" onClick={incrementCounter}>
         {counter}
@@ -64,14 +64,14 @@ const App = () => {
       <button id="skill-btn" onClick={submitCustomTask}>
         Submit
       </button>
-      <ul>
+      <ul id="item-jumbotron">
         {todos.map((todo, index) => (
           <li id={`todo-${index}`} key={index}>
             {todo}
           </li>
         ))}
       </ul>
-      <p>Counter: {counter}</p>
+      <p id="calc">Counter: {counter}</p>
     </div>
   );
 };

@@ -6,9 +6,9 @@ const UseMemo = () => {
   const memoizedValue = useMemo(() => {
     let result = 0;
     for (let i = 0; i <= 1000000000; i++) {
-      result = i;
+      result += i; // Accumulate the sum
     }
-    return 1000000000;
+    return result;
   }, []);
   // /1000000000
   return (

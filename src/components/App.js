@@ -44,14 +44,19 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div id="main">
       <h1>Task Manager</h1>
-      <button onClick={addTodo}>Add todo</button>
-      <button onClick={incrementCounter}>Increment counter</button>
+      <button id="add-todo-btn" onClick={addTodo}>
+        Add todo
+      </button>
+      <button id="incr-cnt" onClick={incrementCounter}>
+        Increment counter
+      </button>
       <UseMemo />
       <ReactMemo />
       <input
         type="text"
+        id="skill-input"
         value={customTask}
         onChange={handleCustomTaskChange}
         placeholder="Enter custom task (more than 5 characters)"

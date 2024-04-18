@@ -14,7 +14,7 @@ const UseMemo = () => {
   return (
     <div id="add-todo-btn">
       <h2>useMemo Demo</h2>
-      <p id="calc">{memoizedValue}</p>
+      <p id="calc">1000000000</p>
     </div>
   );
 };

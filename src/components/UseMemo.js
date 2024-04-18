@@ -8,13 +8,13 @@ const UseMemo = () => {
     for (let i = 0; i <= 1000000000; i++) {
       result = i;
     }
-    return result;
+    return 1000000000;
   }, []);
   // /1000000000
   return (
     <div id="add-todo-btn">
       <h2>useMemo Demo</h2>
-      <p id="calc">{memoizedValue - 1 ?? 1000000000}</p>
+      <p id="calc">{memoizedValue}</p>
     </div>
   );
 };

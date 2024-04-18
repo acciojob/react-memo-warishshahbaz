@@ -50,7 +50,7 @@ const App = () => {
         Add todo
       </button>
       <button id="incr-cnt" onClick={incrementCounter}>
-        Increment counter
+        {counter}
       </button>
       <UseMemo />
       <ReactMemo />
@@ -61,10 +61,14 @@ const App = () => {
         onChange={handleCustomTaskChange}
         placeholder="Enter custom task (more than 5 characters)"
       />
-      <button onClick={submitCustomTask}>Submit</button>
+      <button id="skill-btn" onClick={submitCustomTask}>
+        Submit
+      </button>
       <ul>
         {todos.map((todo, index) => (
-          <li key={index}>{todo}</li>
+          <li id={`todo-${index}`} key={index}>
+            {todo}
+          </li>
         ))}
       </ul>
       <p>Counter: {counter}</p>

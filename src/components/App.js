@@ -49,7 +49,7 @@ const App = () => {
       <button id="add-todo-btn" onClick={addTodo}>
         Add Todo
       </button>
-      <button id="incr-btn" onClick={incrementCounter}>
+      <button id="incr-cnt" onClick={incrementCounter}>
         {counter}
       </button>
       <UseMemo />

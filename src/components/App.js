@@ -1,77 +1,22 @@
-{
-  /* <p>Now I can render any React component on any DOM node I want using ReactDOM.render</p> */
-}
-// App.js
-import React, { useState, useEffect } from "react";
-import UseMemo from "./UseMemo";
-import ReactMemo from "./ReactMemo";
+import React, { useState } from "react";
+import Todo from "./Todo";
+import Memo from "./Memo";
+import Count from "./Count";
+import { useEffect } from "react";
 
-const App = () => {
-  const [todos, setTodos] = useState([]);
-  const [counter, setCounter] = useState(0);
-  const [customTask, setCustomTask] = useState("");
-
-  useEffect(() => {
-    // Fetch todos from localStorage or initialize empty array
-    const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
-    setTodos(storedTodos);
-  }, []);
-
-  useEffect(() => {
-    // Update localStorage when todos change
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
-
-  const addTodo = () => {
-    setTodos([...todos, "New Todo"]);
-  };
-
-  const incrementCounter = () => {
-    setCounter((prevCounter) => prevCounter + 1);
-  };
-
-  const handleCustomTaskChange = (e) => {
-    setCustomTask(e.target.value);
-  };
-
-  const submitCustomTask = () => {
-    if (customTask.length > 5) {
-      setTodos([...todos, customTask]);
-      setCustomTask("");
-    } else {
-      alert("Custom task must be more than 5 characters.");
-    }
-  };
-
+let App = () => {
+  useEffect(() => {}, [count, memo, todos]);
+  let [todos, Settodos] = useState(["New Todo"]);
+  let [memo, Setmemo] = useState(["HTMLL", "CSSS3"]);
+  let [count, Setcount] = useState(1000000000);
   return (
     <div id="main">
-      <h1>Task Manager</h1>
-      <button id="add-todo-btn" onClick={addTodo}>
-        Add Todo
-      </button>
-      <button id="incr-btn" onClick={incrementCounter}>
-        {counter}
-      </button>
-      <UseMemo />
-      <ReactMemo />
-      <input
-        type="text"
-        id="skill-input"
-        value={customTask}
-        onChange={handleCustomTaskChange}
-        placeholder="Enter custom task (more than 5 characters)"
-      />
-      <button id="skill-btn" onClick={submitCustomTask}>
-        Submit
-      </button>
-      <ul id="item-jumbotron">
-        {todos.map((todo, index) => (
-          <li id={`todo-${index}`} key={index}>
-            {todo}
-          </li>
-        ))}
-      </ul>
-      <p id="incr-cnt">Counter: {counter}</p>
+      <h1>React.useMEMo</h1>
+      <Todo set={Settodos} arr={todos} />
+      <Count set={Setcount} number={count} />
+      <h1>Expensive Calculation</h1>
+      {/* <div id='calc'>1000000000</div> */}
+      <Memo set={Setmemo} arr={memo} />
     </div>
   );
 };
